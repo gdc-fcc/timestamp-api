@@ -16,6 +16,7 @@ app.get("/", (_req, res) => {
   res.sendFile(__dirname + "/views/index.html");
 });
 
+// Do not change code above this line
 const handler = (res, parsed) => {
   if (parsed.toString() == 'Invalid Date') {
     res.json({error: "Invalid Date"})
@@ -27,7 +28,6 @@ const handler = (res, parsed) => {
   }
 }
 
-// Do not change code above this line
 app.get("/api/:date", (req, res) => {
   let date = req.params.date
   if (/^[0-9]*$/.test(date)) {
